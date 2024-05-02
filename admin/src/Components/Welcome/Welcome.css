@@ -1,0 +1,95 @@
+.welcome {
+    background: linear-gradient(to right, rgb(72, 84, 211), 78%, rgb(96, 145, 247));
+    color: white;
+    display: block;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    height: 160pt;
+}
+
+.welcome_title {
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 200px;
+    margin-bottom: 8px;
+    font-family: Barlow Condensed, Adjusted Arial Black Fallback, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 3.3rem;
+    color: #f2afdc;
+    text-transform: uppercase;
+    letter-spacing: -.055em;
+}
+
+.welcome_research_containe {
+    height: 48px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 6000;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.welcome_research_form {
+    align-items: center;
+    border-radius: 8px;
+    display: flex;
+    padding-left:200px;
+}
+/*
+.new_search_form_header {
+    display: block;
+    width: 80%;
+    background-color: #fff;
+    min-height: 48px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 24px;
+}
+*/
+.welcome_text_input_for_search {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 35%;
+    background: #f1f1f1;
+}
+
+.search_form_submit_button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer; 
+}
+
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .welcome_research_forme::after {
+        content: "";
+        clear: both;
+        display: table;
+        padding-left: 20px;
+    }
+
+    .search_form_submit_button::after {
+        overflow: hidden;
+    }
+
+    .welcome_title {
+        padding-left: 50px;
+        font-size: 1.5rem;
+    }
+}
