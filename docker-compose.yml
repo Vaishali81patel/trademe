@@ -1,0 +1,47 @@
+version: '4'
+services:
+
+    backend:
+      build: ./backend
+      expose:
+          - 5000
+      ports:
+        - 5000:5000
+      volumes:
+        - ./backend/src:/srv/app/admin-server/src
+      depends_on:
+        - mongo
+      command: npm run start      
+  
+    frontend:
+      build: ./frontend
+      expose:
+        - 3000
+      ports:
+        - 80:3000
+      volumes:
+        - ./frontend/src:/srv/app/admin-client/src
+        - ./frontend/public:/srv/app/admin-client/public
+      stdin_open: true
+      command: npm run start
+
+    mongo:
+      image: mongo
+      ports:
+        - "27017-27017"
+      restart: always
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: vaishali81patel
+        MONGO_INITDB_ROOT_PASSWORD: GraYash2023
+
+    admin:
+      build: admin
+      expose:
+        - 8000
+      ports:
+        - 8000:8000
+      volumes:
+        - ./admin/src:/srv/app/admin-client/src
+        - ./admin/public:/srv/app/admin-client/public
+      stdin_open: true
+      command: npm run dev
